@@ -27,12 +27,12 @@ public class ListaDeTarefasApplication implements CommandLineRunner{
 		
 		Lista l1 = new Lista(null, "Primeira lista");
 		
-		Tarefa i1 = new Tarefa(null, "Item 1", l1);
-		Tarefa i2 = new Tarefa(null, "Item 2", l1);
-		Tarefa i3 = new Tarefa(null, "Item 3", l1);
-		Tarefa i4 = new Tarefa(null, "Item 4", l1);
-		Tarefa i5 = new Tarefa(null, "Item 5", l1);
-		
+		Tarefa i1 = new Tarefa(null, "Item 1", false, l1);
+		Tarefa i2 = new Tarefa(null, "Item 2", false, l1);
+		Tarefa i3 = new Tarefa(null, "Item 3", false, l1);
+		Tarefa i4 = new Tarefa(null, "Item 4", false, l1);
+		Tarefa i5 = new Tarefa(null, "Item 5", false, l1);
+
 		l1.getTarefas().add(i1);
 		l1.getTarefas().add(i2);
 		l1.getTarefas().add(i3);

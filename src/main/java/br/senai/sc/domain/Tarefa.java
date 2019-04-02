@@ -9,6 +9,8 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Tarefa  implements Serializable{
 	private static final long serialVersionUID = 1L;
@@ -18,7 +20,9 @@ public class Tarefa  implements Serializable{
 	private Integer id;
 	
 	private String tarefa;
-	
+	private Boolean concluida;
+
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name = "lista_id")
 	private Lista lista;
@@ -27,12 +31,15 @@ public class Tarefa  implements Serializable{
 		super();
 	}
 
-	public Tarefa(Integer id, String tarefa, Lista lista) {
+	public Tarefa(Integer id, String tarefa, Boolean concluida, Lista lista) {
 		super();
 		this.id = id;
 		this.tarefa = tarefa;
+		this.concluida = concluida;
 		this.lista = lista;
 	}
+
+
 
 	public Integer getId() {
 		return id;
@@ -48,6 +55,14 @@ public class Tarefa  implements Serializable{
 
 	public void setTarefa(String tarefa) {
 		this.tarefa = tarefa;
+	}
+
+	public Boolean getConcluida() {
+		return concluida;
+	}
+
+	public void setConcluida(Boolean concluida) {
+		this.concluida = concluida;
 	}
 
 	public Lista getLista() {
